@@ -139,3 +139,26 @@ matrix = [
 // Call the maxColumn function with the example matrix
 console.log(maxColumn(matrix)); // [12, 19, 21]
 ```
+
+## Zip
+Takes two arrays as input and returns a new array where each element is an array containing corresponding elements from the input arrays, paired together. If one array is longer than the other, the function only pairs elements up to the length of the shorter array.
+
+```javascript
+let zip = function(array1, array2) {
+    // initialise empty array to store zipped pairs
+    let zipped = [];
+    // loop through indices of the first array
+    for (let i = 0; i < array1.length; i++) {
+        // get element at index 'i' from the first array
+        let el1 = array1[i];
+        // het element at index 'i' from the second array
+        let el2 = array2[i];
+        // push pair of elements into the zipped array
+        zipped.push([el1, el2]);
+    }
+    return zipped;
+}
+
+console.log(zip([1, 2, 3, 4], ['eins', 'zwei', 'drei', 'vier'])); // Test with two arrays of equal length
+// [ [ 1, 'eins' ], [ 2, 'zwei' ], [ 3, 'drei' ], [ 4, 'vier' ] ]
+```
